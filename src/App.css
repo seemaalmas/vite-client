@@ -1,0 +1,86 @@
+/* @keyframes moveRight {
+    from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(50vw, 50vh);
+      }
+  }
+  .my-svg-element {
+    animation: moveRight 6s infinite alternate;
+  } */
+
+
+body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.app {
+  position: relative;
+  height: 100vh;
+  /* Make sure the parent container is tall enough */
+  overflow: hidden;
+  /* Prevents scrollbars during animation */
+  width: 100vw;
+}
+
+.animated-image {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  animation: slideUp 3s forwards;
+  /* Animation named slideUp */
+}
+
+@keyframes slideUp {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: 80%;
+    /* Adjust this value based on your needs */
+    right: 80%;
+    /* Adjust to position the image in the corner */
+  }
+}
+
+  .content {
+    display: block;
+    position: fixed;
+    top: 9%;
+    left: 0;
+    background-color: white;
+    height: 95%;
+    overflow-y: auto;
+    width: 100%;
+    animation: slideUpContent 3s forwards;
+  }
+  
+
+@keyframes slideUpContent {
+  from {
+    transform: translateY(100%);
+    /* Start from below the screen */
+  }
+
+  to {
+    transform: translateY(0);
+    /* End at its original position */
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.theme-color {
+  background-color: black;
+}
